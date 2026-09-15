@@ -9,13 +9,14 @@ class Solution {
                 return mid;
             }
 
+            // Check if left part is sorted
             if(nums[low] <= nums[mid]) {
                 if(target >= nums[low] && target <= nums[mid]) {
                     high = mid;
                 } else {
                     low = mid+1;
                 }
-            } else {
+            } else { // Check if right part is sorted
                 if(target >= nums[mid+1] && target <= nums[high]) {
                     low = mid+1;
                 } else {
